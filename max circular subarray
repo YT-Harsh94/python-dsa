@@ -1,0 +1,44 @@
+#User function Template for python3
+
+#Complete this function
+#Function to find maximum circular subarray sum.
+def circularSubarraySum(nums,n):
+    ##Your code here
+        globmax = nums[0]
+        globmin = nums[0]
+        currmax = 0
+        currmin = 0
+        total = 0
+        for n in nums:
+            currmax = max(currmax+n,n)
+            globmax = max(globmax,currmax)
+            total+=n
+            currmin = min(currmin+n,n)
+            globmin = min(globmin,currmin)
+        return max(globmax,total-globmin) if globmax>0 else globmax
+
+
+#{ 
+ # Driver Code Starts
+#Initial Template for Python 3
+
+
+import math
+import sys
+
+    
+    
+
+if __name__ == "__main__":
+    T=int(input())
+    while(T>0):
+            
+        n=int(input())
+        
+        arr=[int(x) for x in input().strip().split()]
+            
+        print(circularSubarraySum(arr,n))
+        
+        T-=1
+    
+# } Driver Code Ends
